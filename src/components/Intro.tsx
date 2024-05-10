@@ -31,7 +31,7 @@ const Intro: React.FC<ContainerProps> = ({ onFinish }) => {
             <SwiperSlide>
                 <img src={intro2} alt='Intro 2' />
                 <IonText>
-                    <h3>Capture your moments</h3>
+                    <h3>Relive your best moments</h3>
                 </IonText>
                 <SwiperButtonNext>Next</SwiperButtonNext>
             </SwiperSlide>
@@ -39,9 +39,9 @@ const Intro: React.FC<ContainerProps> = ({ onFinish }) => {
             <SwiperSlide>
                 <img src={intro3} alt='Intro 3' />
                 <IonText>
-                    <h3>Capture your moments</h3>
+                    <h3>Start now with us!</h3>
                 </IonText>
-                <IonButton onClick={() => onFinish()}>FINISH</IonButton>
+                <IonButton onClick={() => onFinish()}>Start</IonButton>
             </SwiperSlide>
         </Swiper>
     );
