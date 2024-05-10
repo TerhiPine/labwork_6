@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCardContent, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonPage, IonTitle, IonToolbar, useIonLoading, useIonRouter } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonInput, IonPage, IonRow, IonTitle, IonToolbar, useIonLoading, useIonRouter } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { logInOutline, personCircleOutline } from 'ionicons/icons';
 import pizza from '../assets/pizza.jpg'
@@ -10,7 +10,7 @@ const INTRO_KEY = 'intro-seen';
 const Login: React.FC = () => {
     const router = useIonRouter();
     const [introSeen, setIntroSeen] = useState(true);
-    const [present. dismiss] = useIonLoading();
+    const [present, dismiss] = useIonLoading();
 
     useEffect(() => {
         const checkStorage = async () => {
@@ -52,11 +52,19 @@ const Login: React.FC = () => {
                     <IonTitle>PixelPioneers</IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent scrollY={false}>
-                <div className="ion-text-center ion-padding">
-                <img src={pizza} alt='logo' width={'100%'} />
-                </div>
-               <IonCard>
+            <IonContent scrollY={false} className='ion-padding'>
+                <IonGrid fixed>
+                    <IonRow class='ion-justify-content-center'>
+                        <IonCol size='12' sizeMd='8' sizeLg='6' sizeXl='4'>
+                        <div className="ion-text-center ion-padding">
+                            <img src={pizza} alt='logo' width={'100%'} />
+                        </div>
+                        </IonCol>
+                    </IonRow>
+
+                    <IonRow class='ion-justify-content-center'>
+                        <IonCol size='12' sizeMd='8' sizeLg='6' sizeXl='4'>
+                        <IonCard>
                 <IonCardContent>
                     <form onSubmit={doLogin}>
                         <IonInput labelPlacement="floating" label="Email" type='email' placeholder="your email address"></IonInput>
@@ -76,6 +84,11 @@ const Login: React.FC = () => {
                     </form>
                 </IonCardContent>
                </IonCard>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
+
+
             </IonContent>
             <IonFooter>
                 <IonToolbar className="ion-text-center">Make pictures gun again!</IonToolbar>
